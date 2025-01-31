@@ -22,43 +22,53 @@ const AiCardBoard = () => {
                 />
                 <AiCard
                     title="DeepSeek"
-                    modelCount={6}
-                    monthlyActiveUsers={180}
+                    modelCount={4}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
-                    title="Bing Image Creator"
+                    title="Copilot"
                     modelCount={4}
-                    monthlyActiveUsers={20}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
                     title="Midjourney"
                     modelCount={6}
-                    monthlyActiveUsers={180}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
                     title="Qwen"
-                    modelCount={4}
-                    monthlyActiveUsers={20}
+                    modelCount={13}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
                     title="Mistral"
-                    modelCount={6}
-                    monthlyActiveUsers={180}
+                    modelCount={3}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
-                    title="Ollama"
-                    modelCount={4}
-                    monthlyActiveUsers={20}
+                    title="Llama"
+                    modelCount={3}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
                     title="ImageGen"
-                    modelCount={6}
-                    monthlyActiveUsers={180}
+                    modelCount={1}
+                    monthlyActiveUsers={0}
                 />
                 <AiCard
                     title="Grok"
-                    modelCount={4}
-                    monthlyActiveUsers={20}
+                    modelCount={2}
+                    monthlyActiveUsers={0}
+                />
+                <AiCard
+                    title="DeepMind"
+                    modelCount={2}
+                    monthlyActiveUsers={0}
+                />
+                <AiCard
+                    title="Gemini"
+                    modelCount={3}
+                    monthlyActiveUsers={0}
                 />
             </div>
         </>
