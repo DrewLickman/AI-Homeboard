@@ -49,7 +49,7 @@ function App() {
 						></input>
 						
 					</div>
-					<div className="border-2 flex-auto  h-screen">
+					<div className="border-2 flex-auto">
 						<div className="">
 							<AiCardBoard/>
 						</div>
