@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import './App.css'
 import AiCardBoard from './components/AiCardBoard.jsx';
+import NewsCardBoard from './components/NewsCardBoard.jsx';
 
 function App() {
 
@@ -15,11 +16,14 @@ function App() {
 	return (
 		<>
 			<h1 className="border-2 text-center">AI Homeboard</h1>
-
 			<div className="flex flex-row">
 
 				{/* News and Updates Column */}
-				<div className="border-2 min-w-sm max-w-sm h-screen text-center">Latest News and Updates</div>
+				<div className="border-2 min-w-sm max-w-sm h-screen text-center">Latest News and Updates
+					<div className="">
+						<NewsCardBoard/>
+					</div>
+				</div>
 				
 				{/* Sorting and Filtering, and AI Card Board */}
 				<div className="flex flex-col">
@@ -60,4 +64,4 @@ function App() {
 	)
 }
 
-export default App
+export default App;
