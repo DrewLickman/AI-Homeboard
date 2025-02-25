@@ -1,23 +1,47 @@
+import { useState, useEffect } from 'react';
 import NewsCard from './NewsCard.jsx';
-
-//todo:
-//Create data storage class
-//Then just create a loop to display them on the board
+import NewsData from './NewsData.js';
 
 const NewsCardBoard = () => {
+    const [news, setNews] = useState([]);
+    const [visibleCount, setVisibleCount] = useState(5);
+    
+    useEffect(() => {
+        // Sort news by date (most recent first)
+        const sortedNews = [...NewsData].sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+        
+        setNews(sortedNews);
+    }, []);
+    
+    const loadMore = () => {
+        setVisibleCount(prev => Math.min(prev + 3, news.length));
+    };
+
     return (
-        <>
-            <div className="flex flex-row flex-wrap m-2">
+        <div className="space-y-2">
+            {news.slice(0, visibleCount).map(item => (
                 <NewsCard
-                    title="ChatGPT"
-                    description="This description is a standard sized description. Lorem ipsum or something like that you know?"
+                    key={item.id}
+                    title={item.title}
+                    description={item.description}
+                    thumbnail={item.thumbnail}
+                    source={item.source}
+                    date={item.date}
+                    url={item.url}
                 />
-                <NewsCard
-                    title="DeepSeek"
-                    description="This description describes the fact that DeepSeek released an OpenSource model named 'r1' that removed nearly $600 Billion from Nvidia's market cap!"
-                />
-            </div>
-        </>
+            ))}
+            
+            {visibleCount < news.length && (
+                <button 
+                    onClick={loadMore}
+                    className="w-full py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-gray-700 text-sm transition-colors mt-2"
+                >
+                    Show More News
+                </button>
+            )}
+        </div>
     );
 };
 
