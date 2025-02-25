@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './styles/futuristic-theme.css' // Import global CSS with variables
 import './index.css'
 import App from './App.jsx'
 

@@ -1,0 +1,330 @@
+/* Futuristic Theme CSS - Pure CSS approach without relying on Tailwind utilities */
+
+:root {
+  --color-cyan: rgb(0, 255, 255);
+  --color-magenta: rgb(255, 0, 255);
+  --color-yellow: rgb(255, 255, 0);
+  --color-pink: rgb(255, 105, 180);
+  
+  --dark-bg: #121212;
+  --dark-card: #1a1a1a;
+  --dark-container: #222222;
+  
+  --glow-cyan: 0 0 5px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.4);
+  --glow-magenta: 0 0 5px rgba(255, 0, 255, 0.2), 0 0 20px rgba(255, 0, 255, 0.4);
+  --glow-yellow: 0 0 5px rgba(255, 255, 0, 0.2), 0 0 20px rgba(255, 255, 0, 0.4);
+  --glow-pink: 0 0 5px rgba(255, 105, 180, 0.2), 0 0 20px rgba(255, 105, 180, 0.4);
+  
+  --glow-cyan-strong: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.6);
+  --glow-magenta-strong: 0 0 10px rgba(255, 0, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.6);
+  --glow-yellow-strong: 0 0 10px rgba(255, 255, 0, 0.4), 0 0 30px rgba(255, 255, 0, 0.6);
+  --glow-pink-strong: 0 0 10px rgba(255, 105, 180, 0.4), 0 0 30px rgba(255, 105, 180, 0.6);
+  
+  --gradient-cyan-magenta: linear-gradient(to right, var(--color-cyan), var(--color-magenta));
+  --gradient-cyan-pink: linear-gradient(to right, var(--color-cyan), var(--color-pink));
+  --gradient-magenta-yellow: linear-gradient(to right, var(--color-magenta), var(--color-yellow));
+  --gradient-tri: linear-gradient(to right, var(--color-cyan), var(--color-magenta), var(--color-yellow));
+}
+
+/* Background Colors */
+.futuristic-dark-bg {
+  background-color: var(--dark-bg);
+}
+
+.futuristic-card-bg {
+  background-color: var(--dark-card);
+}
+
+.futuristic-container-bg {
+  background-color: var(--dark-container);
+}
+
+/* Text Colors */
+.futuristic-text-cyan {
+  color: var(--color-cyan);
+}
+
+.futuristic-text-magenta {
+  color: var(--color-magenta);
+}
+
+.futuristic-text-yellow {
+  color: var(--color-yellow);
+}
+
+.futuristic-text-pink {
+  color: var(--color-pink);
+}
+
+.futuristic-text-white {
+  color: white;
+}
+
+.futuristic-text-gray {
+  color: #a0a0a0;
+}
+
+/* Border Colors */
+.futuristic-border-cyan {
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.futuristic-border-magenta {
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.futuristic-border-yellow {
+  border: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+.futuristic-border-pink {
+  border: 1px solid rgba(255, 105, 180, 0.3);
+}
+
+/* Glowing Effects */
+.futuristic-glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+.futuristic-glow-cyan-strong {
+  box-shadow: var(--glow-cyan-strong);
+}
+
+.futuristic-glow-magenta {
+  box-shadow: var(--glow-magenta);
+}
+
+.futuristic-glow-magenta-strong {
+  box-shadow: var(--glow-magenta-strong);
+}
+
+.futuristic-glow-yellow {
+  box-shadow: var(--glow-yellow);
+}
+
+.futuristic-glow-yellow-strong {
+  box-shadow: var(--glow-yellow-strong);
+}
+
+.futuristic-glow-pink {
+  box-shadow: var(--glow-pink);
+}
+
+.futuristic-glow-pink-strong {
+  box-shadow: var(--glow-pink-strong);
+}
+
+/* Text Shadows */
+.futuristic-text-shadow-cyan {
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Gradients */
+.futuristic-gradient-header {
+  background-image: linear-gradient(to right, #06b6d4, #9333ea, #ec4899);
+}
+
+.futuristic-gradient-cyan-magenta {
+  background-image: var(--gradient-cyan-magenta);
+}
+
+.futuristic-gradient-cyan-pink {
+  background-image: var(--gradient-cyan-pink);
+}
+
+.futuristic-gradient-magenta-yellow {
+  background-image: var(--gradient-magenta-yellow);
+}
+
+.futuristic-gradient-tri {
+  background-image: var(--gradient-tri);
+}
+
+.futuristic-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Grid background */
+.futuristic-grid-bg {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glow effects for elements */
+.futuristic-glow-effect {
+  position: relative;
+}
+
+.futuristic-glow-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 255, 255, 0.2);
+  filter: blur(1rem);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+}
+
+.futuristic-glow-effect::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 0, 255, 0.2);
+  filter: blur(1rem);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+}
+
+.futuristic-glow-effect:hover::before,
+.futuristic-glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Component Classes */
+.futuristic-card {
+  background-color: var(--dark-card);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: var(--glow-cyan);
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-card-magenta {
+  background-color: var(--dark-card);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  box-shadow: var(--glow-magenta);
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-card-yellow {
+  background-color: var(--dark-card);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  box-shadow: var(--glow-yellow);
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-container {
+  background-color: var(--dark-bg);
+  min-height: 100vh;
+}
+
+.futuristic-header {
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.futuristic-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.futuristic-button-cyan {
+  background-color: var(--dark-container);
+  color: var(--color-cyan);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.futuristic-button-cyan:hover {
+  box-shadow: var(--glow-cyan);
+  color: white;
+}
+
+.futuristic-button-magenta {
+  background-color: var(--dark-container);
+  color: var(--color-magenta);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.futuristic-button-magenta:hover {
+  box-shadow: var(--glow-magenta);
+  color: white;
+}
+
+.futuristic-button-gradient {
+  background-image: var(--gradient-cyan-magenta);
+  color: white;
+  box-shadow: var(--glow-cyan);
+}
+
+.futuristic-button-gradient:hover {
+  box-shadow: var(--glow-cyan-strong);
+}
+
+.futuristic-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  border: 1px solid;
+}
+
+.futuristic-badge-cyan {
+  border-color: rgba(0, 255, 255, 0.3);
+  background-color: rgba(0, 255, 255, 0.1);
+  color: rgba(0, 255, 255, 0.8);
+}
+
+.futuristic-badge-magenta {
+  border-color: rgba(255, 0, 255, 0.3);
+  background-color: rgba(255, 0, 255, 0.1);
+  color: rgba(255, 105, 180, 0.8);
+}
+
+.futuristic-badge-yellow {
+  border-color: rgba(255, 255, 0, 0.3);
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(255, 255, 0, 0.8);
+}
+
+.futuristic-input {
+  width: 100%;
+  background-color: var(--dark-container);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s;
+}
+
+.futuristic-input:focus {
+  outline: none;
+  border-color: rgba(255, 0, 255, 0.5);
+  box-shadow: var(--glow-magenta);
+}
+
+.futuristic-input::placeholder {
+  color: #9ca3af;
+}
+
+.futuristic-heading {
+  font-weight: 700;
+  background-image: var(--gradient-tri);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+}
